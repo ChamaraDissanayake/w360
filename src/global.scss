@@ -24,3 +24,22 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+ion-content{
+    --background: url(./assets/images/background-image.png) 0 0/100% 100% no-repeat;
+}
+
+.btnNavigate{
+    --background:midnightblue;
+    --border-radius: 10px;
+    width: 142px;
+    height: 54px;
+    font-weight: bold;
+    font-size: larger;
+    text-transform: none;
+}
+
+.footer-image{
+    height: 101%;
+}

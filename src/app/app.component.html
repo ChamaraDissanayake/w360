@@ -1,3 +1,33 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu menuId="main-menu" content-id='main'>
+    <ion-header>
+      <ion-toolbar>
+        <ion-menu-toggle>
+          <div (click)="gotoLogin()" *ngIf='!w360Service.isLoggedIn'>
+            <img src="../assets/images/logo.png" style="width: 26%; margin-left: 20px;" alt="KIA MOTORS">
+            <ion-title class="text-white" style="float: right;">Sign In / Sign Up</ion-title>
+          </div>
+          <div (click)="gotoMyProfile()" *ngIf='w360Service.isLoggedIn'>
+            <img src="../assets/images/logo.png" style="width: 26%; margin-left: 20px;" alt="KIA MOTORS">
+            <ion-title class="text-white" style="float: right;">My profile</ion-title>
+          </div>
+        </ion-menu-toggle>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="gradientBackground">
+      <ion-list style="background:transparent;">
+        <ion-menu-toggle>
+          <ion-item (click)="gotoReusableCards()">
+            <ion-icon name="home-outline" slot="start"></ion-icon>
+            <ion-label>Reusable cards</ion-label>
+          </ion-item>
+          <ion-item (click)="gotoLazyLoading()">
+            <ion-icon name="car-outline" slot="start"></ion-icon>
+            <ion-label>Lazy loading</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>
